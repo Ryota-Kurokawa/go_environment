@@ -1,9 +1,9 @@
-version: '3'
+version: "3"
 services:
-  web:
-    build: ./web
-    tty: true
-    volumes:
-      - ./web:/go/src
+  db:
+    image: mysql:5.7
+    environment:
+    - MYSQL_DATABASE=sample_db
+    - MYSQL_ROOT_PASSWORD=root
     ports:
-      - "8080:8080"
+    - "3306:3306"
